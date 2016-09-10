@@ -8,10 +8,6 @@ function mainCtrl($scope,$timeout) {
 
     var s = $scope;
 
-    // TODO: filter for this? tablet size, 
-    // would need to remove the first event in the array
-    // if window width is x, remove index zero from the array? start at 1 
-    // in array and only show 
     s.events = [
         {
             _id:'kenny',
@@ -58,23 +54,13 @@ function mainCtrl($scope,$timeout) {
     function _filterEvents() {
         var width = window.innerWidth;
         var shows = s.events;
-        // s.featured = show[0]
-        console.log(s.events)
-        console.log(shows)
-        console.log(width)
-        // need to add a watcher for a resize, so we can add the featured back in
 
         if (width > 320 && width < 1280) {
-            // s.featured = s.events[0];
+
             if (s.events.length > 2) {
-                // s.events = shows.splice(1,2);
                 s.featured = shows.splice(0,1);
-                console.log(s.events)
-                console.log(shows)
             }
         }
-        // console.log(s.events)
-        // console.log(s.featured)
     }
 
     /*  LISTENERS  */
@@ -87,11 +73,8 @@ function mainCtrl($scope,$timeout) {
     /* INITIALIZATION */
 
     function activate() {
-        // console.log(window.innerWidth)
-        // console.log(s.events)
 
         _filterEvents();
-        // console.log(s.featured)
     }
 
 }

@@ -1,6 +1,3 @@
-// NOTES:
-// -keep items in increments of 8/12
-// -change class names to match sketch items/categories?
 
 // Style Scheme:
 $darkGray:#4D4F56;
@@ -12,7 +9,7 @@ $white:#FFFFFF;
 $fontSmall: 12px;
 $fontMed:14px;
 $fontLarge:16px;
-// Used?
+
 $fontXlarge:18px;
 $fontXXlarge:20px;
 $fontSubhead:22px;
@@ -20,14 +17,12 @@ $fontMhead:40px;
 
 $fontXMhead:48px;
 
-// TODO: REMOVE?
 $fontLight: 200;
 
 
 
 html { 
 	font-family: 'Lato', sans-serif;
-	// TODO: REMOVE?
 	font-weight:300;
 
 body {
@@ -105,7 +100,6 @@ body {
 
 
 	& input {
-		// TODO: 3px taller than the button
 		border-color: transparent;
 		border-radius: 4px;
 		font-size: $fontSmall;
@@ -285,8 +279,10 @@ body {
 
 @media (max-width:340px) {
 	.listings-show-simage {
-	// kenny featured is off on small screen
 		height: 240px;
+		width: 280px;
+	}
+	.listings-show-info {
 		width: 280px;
 	}
 	.footer-social-icons {
