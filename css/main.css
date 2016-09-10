@@ -154,9 +154,9 @@ html {
       margin: 8px; }
   .footer-misc {
     color: #D8D8D8;
-    font-size: 14px;
-    margin: 8px;
-    padding: 8px; }
+    font-size: 12px;
+    margin: 8px 4px;
+    padding: 8px 0; }
   .footer a:hover, .footer a:visited, .footer a:link, .footer a:active {
     color: #D8D8D8; }
 
@@ -184,6 +184,9 @@ html {
   .listings-show-simage {
     height: 240px;
     width: 300px; }
+  .footer-social-icons {
+    height: 30px;
+    width: 30px; }
   #featured {
     height: 320px;
     width: 680px; } }
