@@ -251,9 +251,9 @@ body {
 
 	&-misc {
 		color: $lightGray;
-		font-size: $fontMed;
-		margin: 8px;
-		padding: 8px;
+		font-size: $fontSmall;
+		margin: 8px 0;
+		padding: 8px 0;
 	}
 
 	& a:hover, a:visited, a:link, a:active {
