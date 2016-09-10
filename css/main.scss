@@ -1,0 +1,333 @@
+// NOTES:
+// -keep items in increments of 8/12
+// -change class names to match sketch items/categories?
+
+// Style Scheme:
+$darkGray:#4D4F56;
+$lightGray:#D8D8D8;
+$green:#90C45B;
+$red:#F4511E;
+$white:#FFFFFF;
+
+$fontSmall: 12px;
+$fontMed:14px;
+$fontLarge:16px;
+// Used?
+$fontXlarge:18px;
+$fontXXlarge:20px;
+$fontSubhead:22px;
+$fontMhead:40px;
+
+$fontXMhead:48px;
+
+// TODO: REMOVE?
+$fontLight: 200;
+
+
+
+html { 
+	font-family: 'Lato', sans-serif;
+	// TODO: REMOVE?
+	font-weight:300;
+
+body {
+	margin:0;
+	
+}
+
+	// TODO: Use background-size 100% 100%
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+// this class encompasses entire top navbar, taglines, and inputs/form
+.landing {
+  background: url('../images/background.png') no-repeat center center; 
+  padding: 0 12px;
+}
+
+// Listed in Order of Appearance
+.navbar {
+	padding-top: 12px;
+
+	&-logo {
+		background: url('../images/logo.png') no-repeat center center;
+		background-size: 100% 100%;
+		max-height: 60px;
+		max-width: 40px;
+	}
+
+	&-action {
+		color: $white;
+		font-size: $fontMed;
+		font-weight: $fontLight;
+		padding: 12px 4px;
+		text-transform: capitalize;
+	}
+
+	&-joinus {
+		align-items: center;
+		background-color: $white;
+		border-radius: 4px;
+		color: $red;
+		font-size: $fontMed;
+		font-weight: $fontLight;
+		padding:12px;
+		text-align: center;
+		text-transform: capitalize;
+	}
+
+}
+
+.taglines {
+	color:$white;
+	font-weight: $fontLight;
+	padding: 0 24px;
+	text-align:center;
+
+	&-mhead {
+		font-size: $fontMhead;
+		padding: 12px;
+	}
+
+	&-subhead {
+		font-size: $fontSubhead;
+		padding-bottom:24px;
+	}
+}
+
+.search {
+	justify-content:center;
+	margin: 0 12px;
+	text-align:center;	
+
+
+	& input {
+		// TODO: 3px taller than the button
+		border-color: transparent;
+		border-radius: 4px;
+		font-size: $fontSmall;
+		line-height: 1.5;
+		margin: 8px 0;
+		padding:12px;
+		text-align: center;
+	}
+
+	&-selection {
+		max-height: 60px;
+
+		&-dropdown {
+			background-color: $white;
+			border-radius: 4px;
+			color: $lightGray;
+			cursor: pointer;
+			line-height: 1.5;
+			margin: 8px 0;
+			padding: 8px 12px;
+
+			&-inner {
+				align-items: center;
+				font-size: $fontSmall;
+				justify-content: center;
+			}
+
+			& ul {
+				list-style: none;
+			}
+			& a:hover, a:visited, a:link, a:active {
+				text-decoration: none;
+				color: $lightGray;
+			}
+
+			&-items {
+				list-style: none;
+				display: none;
+			}
+		}
+	}
+
+	&-gobutton {
+		background-color: $green;
+		border-radius: 4px;
+		color: $white;
+		font-size: $fontMed;
+		margin: 8px 0;
+		padding: 12px 0;
+		text-align: center;
+	}
+}
+
+.listings {
+
+	&-tabs {
+		margin: 24px 0;
+
+		&-item {
+			color: $darkGray;
+			font-size: $fontMed;
+			padding: 12px 8px;
+			margin: 2px;
+		}
+	}
+
+	&-show {
+		margin: 0 12px;
+
+		&-simage {
+			background-size: 100% 100%;
+			justify-content: center;
+			margin: 12px 0;
+		}
+
+		&-genre {
+			color: $lightGray;
+			font-size: $fontMed;
+		}
+
+		&-headliner {
+			color: $red;
+			font-size: $fontXlarge;
+			padding: 12px 0;
+		}
+
+		&-info {
+			border-top: 1px solid $lightGray;
+
+			&-location {
+				border-right: 1px solid $lightGray;
+				color: $darkGray;
+				font-size: $fontMed;
+				padding: 12px 12px 0 0;
+				text-align: right;
+
+				&-tlabel {
+					color: $lightGray;
+					font-size: $fontSmall;
+					padding-bottom: 8px;
+				}
+			}
+
+			&-pricing {
+				color: $darkGray;
+				font-size: $fontMed;
+				padding: 12px 0 0 12px;
+				text-align: left;
+
+				&-tlabel {
+					color: $lightGray;
+					font-size: $fontSmall;
+					padding-bottom: 8px;
+				}
+			}
+		}
+	}
+
+	&-discover {
+		border: 1px solid $lightGray;
+		color: $green;
+		font-size: $fontMed;
+		margin:48px 36px;
+		padding: 12px;
+		text-align: center;
+	}
+}
+
+.footer {
+	border-top: 1px solid $lightGray;
+	margin-top:48px;
+
+	&-social {
+		align-items: center;
+		margin: 4px 8px;
+
+		&-icons {
+			align-items: center;
+			height: 100%;
+			margin: 8px;
+		}
+	}
+
+	&-misc {
+		color: $lightGray;
+		font-size: $fontMed;
+		margin: 8px;
+		padding: 8px;
+	}
+
+	& a:hover, a:visited, a:link, a:active {
+		color: $lightGray;
+	}
+}
+
+#tabsUnder {
+	border-bottom: 1px solid $green;
+}
+
+
+
+// Media queries
+
+@media (max-width:320px) {
+	.taglines-mhead {
+		font-size: 24px;
+		padding: 24px 0 12px 0;
+	}
+	.taglines-subhead {
+		font-size: $fontXlarge;
+	}
+}
+
+@media (max-width:340px) {
+	.listings-show-simage {
+	// kenny featured is off on small screen
+		height: 240px;
+		width: 280px;
+	}
+	.footer-social-icons {
+		height: 30px;
+		width: 30px;
+	}
+	#navPadding {
+		display: none;
+	}
+}
+
+@media (min-width:341px) and (max-width:960px) {
+	// thicker font for headings in tablet size
+	// check heights of all these! should fit correctly on all screens
+	.listings-show-simage {
+		height: 240px;
+		width: 300px;
+	}
+	#featured {
+		height: 320px;
+		width: 680px;
+	}
+}
+
+@media (min-width:961px) and (max-width:1280px) {
+	.footer-social-icons {
+		margin:2px;
+	}
+	.listings {
+		margin: 24px 48px;
+	}
+	.listings-show-simage {
+		height: 280px;
+		width: 365px;
+	}
+	.taglines-mhead {
+		font-size: $fontXMhead;
+	}
+	#featured {
+		height: 320px;
+		width: 680px;
+	}
+}
+
+@media (min-width:1281px) {
+
+}
+

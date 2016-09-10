@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="caddisApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Caddis Test</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+  <!-- Google Font Stylesheet -->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!-- Angular Material Library (Local) -->
+  <link rel="stylesheet" href="css/angular-material.css" />
+  <!-- Material Icons -->
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body ng-controller="mainCtrl">
+
+  <div class="landing" layout="column" layout-fill>
+
+  <!-- Top Navbar -->
+    <div flex="10" layout="row" class="navbar">
+
+      <div flex-xs="15" flex-sm="10" flex-gt-sm="5"
+        class="navbar-logo"></div>
+
+      <div flex-xs="35" flex-sm="40" flex-gt-sm="65"></div>
+
+      <div layout="row" flex="50" flex-gt-sm="30">
+        <div flex hide-xs class="navbar-action">Browse</div>
+
+        <div flex hide-xs class="navbar-action">Discover</div>
+
+        <div flex class="navbar-action">Add event</div>
+
+        <div flex class="navbar-joinus"><span>Join Us</span></div>
+      </div>
+      
+    </div>
+
+    <div id="navPadding" flex="20"></div>
+  <!-- Tagline -->
+    <div flex="40" class="taglines">
+      <div class="taglines-mhead" layout="column">
+        <span>Amazing performances </span>
+        <span>near you</span>
+      </div>
+      <div class="taglines-subhead">Discover the top live music events in the Southeast</div>
+      
+    </div>
+
+  <!-- Inputs - includes input, dropdowns, and find button-->
+    <div flex="40" layout="row" layout-align="center center">
+      <div flex-xs="90" flex-sm="75" flex-md="55" flex-gt-md="30" layout="column" class="search">
+
+          <input flex placeholder="Enter your favorite artist or genre">
+
+          <div layout="row" class="search-selection">
+            <!-- TODO: Insert mdMenu' -->
+            <div flex-xs="50" flex-gt-xs="33"
+              class="search-selection-dropdown">
+              <div layout="row" 
+                class="search-selection-dropdown-inner">
+                <span>Location</span>
+                <i class="material-icons">expand_more</i>
+              </div>
+            </div>
+
+            <span style="width:12px;"></span>
+
+            <div flex-xs="50" flex-gt-xs="33"  class="search-selection-dropdown">
+              <div layout="row" 
+                class="search-selection-dropdown-inner">
+                <span>Budget</span>
+                <i class="material-icons">expand_more</i>
+              </div>
+            </div>
+
+            <span hide-xs style="width:12px;"></span>
+
+            <div hide-xs flex class="search-gobutton">Find events</div>
+          </div>
+
+        <div hide-gt-xs flex-gt-xs="33" class="search-gobutton">Find events</div>
+        
+      </div>
+    </div>
+
+  </div>
+
+<!-- Show Listings -->
+  <div class="listings">
+    
+  <!-- Show Navigation -->
+    <div layout="row" class="listings-tabs">
+      <!-- TODO: Insert mdTabs -->
+      <div id="tabsUnder" class="listings-tabs-item">Most Popular</div>
+      <div class="listings-tabs-item">Coming Up</div>
+      <div class="listings-tabs-item">Near You</div>
+      
+    </div>
+
+  <!-- Shows -->
+      <!-- Featured 'first' show for tablet size -->
+      <div hide-xs hide-gt-md ng-repeat="event in featured" class="listings-show">
+        <div id="featured" class="listings-show-simage" 
+          ng-style="{'background': 'url({{::event.photo}}) no-repeat center center'}"></div>
+        <div class="listings-show-genre"
+          ng-bind="::event.genre"></div>
+        <div class="listings-show-headliner"
+          ng-bind="::event.artist"></div>
+        <div flex="100" layout="row" class="listings-show-info">
+          
+          <div flex="50" class="listings-show-info-location">
+            <div class="listings-show-info-location-tlabel">LOCATION</div>
+            <div>
+              <span ng-bind="::event.city"></span>, 
+              <span ng-bind="::event.state"></span>
+            </div>
+          </div>
+          
+          <div flex="50" class="listings-show-info-pricing">
+            <div class="listings-show-info-pricing-tlabel">PRICE</div>
+            <div>
+              &dollar;<span ng-bind="::event.minprice"></span>
+              &nbsp;&ndash;&nbsp;&dollar;
+              <span ng-bind="::event.maxprice"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div hide-xs hide-gt-md style="height:24px;"></div>
+
+      <div layout-gt-xs="row">
+        <div flex="50" ng-repeat="event in events" class="listings-show">
+          
+          <div class="listings-show-simage" 
+            ng-style="{'background': 'url({{::event.photo}}) no-repeat center center'}"></div>
+          <div class="listings-show-genre"
+            ng-bind="::event.genre"></div>
+          <div class="listings-show-headliner"
+            ng-bind="::event.artist"></div>
+          <div layout="row" class="listings-show-info">
+            <div class="listings-show-info-location">
+              <div class="listings-show-info-location-tlabel">LOCATION</div>
+              <div>
+                <span ng-bind="::event.city"></span>, 
+                <span ng-bind="::event.state"></span>
+              </div>
+            </div>
+            <div class="listings-show-info-pricing">
+              <div class="listings-show-info-pricing-tlabel">PRICE</div>
+              <div>
+                &dollar;<span ng-bind="::event.minprice"></span>
+                &nbsp;&ndash;&nbsp;&dollar;
+                <span ng-bind="::event.maxprice"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div layout="row">
+        <span flex></span>
+        <div flex-xs="60" flex-sm="30" flex-md="30" flex-gt-md="10"
+          class="listings-discover">
+          <span flex></span>
+          <span>Discover more</span>
+          <span flex></span>
+        </div>
+        <span flex></span>
+      </div>
+
+  </div>
+
+<!-- Footer -->
+
+  <div layout-gt-xs="row" class="footer">
+
+    <!-- <div hide-xs layout="row" flex="50"> -->
+    <div flex-order-xs="2" flex-order-gt-xs="1" layout="row" flex="50">
+      <span hide-gt-md flex></span>
+      <span class="footer-misc">&copy; 2015 Caddis</span>
+      <a class="footer-misc" href="">Privacy Policy</a>
+      <a class="footer-misc" href="">Terms of Use</a>
+    </div>
+
+    <!-- <span hide-xs flex></span> -->
+    <span hide-xs flex></span>
+
+    <!-- <div layout="row" flex-sm="20" flex-md="20" flex-gt-md="10"
+      class="footer-social"> -->
+    <div layout="row" flex-order-xs="1" flex-order-gt-xs="2" 
+      flex-sm="20" flex-md="20" flex-gt-md="10"
+      class="footer-social">
+      <span hide-gt-xs flex></span>
+      <div flex-xs="10" flex-gt-xs="30"class="footer-social-icons"
+        ng-style="{'background': 'url(../images/facebook.png) no-repeat center center'}">
+        <a href=""></a></div>
+      <div flex-xs="10" flex-gt-xs="30" class="footer-social-icons"
+        ng-style="{'background': 'url(../images/twitter.png) no-repeat center center'}">
+        <a href=""></a></div>
+      <div flex-xs="10" flex-gt-xs="30" class="footer-social-icons"
+        ng-style="{'background': 'url(../images/google.png) no-repeat center center'}">
+        <a href=""></a></div>
+      <span hide-gt-xs flex></span>
+    </div>
+
+<!--     <div hide-gt-xs layout="row">
+      <span flex></span>
+      <span class="footer-misc">&copy; 2015 Caddis</span>
+      <a class="footer-misc" href="">Privacy Policy</a>
+      <a class="footer-misc" href="">Terms of Use</a>
+      <span flex></span>
+    </div> -->
+
+  </div>
+
+  <div hide-gt-md style="height:28px;"></div>
+
+  <script src="bower_components/angular/angular.js"></script>
+
+  <!-- Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
