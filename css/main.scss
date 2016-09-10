@@ -252,8 +252,9 @@ body {
 	&-misc {
 		color: $lightGray;
 		font-size: $fontSmall;
-		margin: 8px 0;
+		margin: 8px 4px;
 		padding: 8px 0;
+		white-space: nowrap;
 	}
 
 	& a:hover, a:visited, a:link, a:active {
@@ -301,8 +302,10 @@ body {
 }
 
 @media (min-width:341px) and (max-width:960px) {
-	// thicker font for headings in tablet size
-	// check heights of all these! should fit correctly on all screens
+	.footer-social-icons {
+		height: 30px;
+		width: 30px;
+	}
 	.listings-show-simage {
 		height: 240px;
 		width: 300px;
