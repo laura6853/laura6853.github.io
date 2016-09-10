@@ -57,10 +57,21 @@ function mainCtrl($scope,$timeout) {
 
     function _filterEvents() {
         var width = window.innerWidth;
+        var shows = s.events;
+        // s.featured = show[0]
+        console.log(s.events)
+        console.log(shows)
+        console.log(width)
         // need to add a watcher for a resize, so we can add the featured back in
 
         if (width > 320 && width < 1280) {
-            s.featured = s.events.splice(0,1);
+            // s.featured = s.events[0];
+            if (s.events.length > 2) {
+                // s.events = shows.splice(1,2);
+                s.featured = shows.splice(0,1);
+                console.log(s.events)
+                console.log(shows)
+            }
         }
         // console.log(s.events)
         // console.log(s.featured)

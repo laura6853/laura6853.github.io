@@ -113,8 +113,8 @@
 
   <!-- Shows -->
       <!-- Featured 'first' show for tablet size -->
-      <div hide-xs hide-gt-md ng-repeat="event in featured" class="listings-show">
-        <div id="featured" class="listings-show-simage" 
+      <div class="featured" ng-repeat="event in featured" class="listings-show">
+        <div id="featuredphoto" class="listings-show-simage" 
           ng-style="{'background': 'url({{::event.photo}}) no-repeat center center'}"></div>
         <div class="listings-show-genre"
           ng-bind="::event.genre"></div>
@@ -142,7 +142,7 @@
         </div>
       </div>
 
-      <div hide-xs hide-gt-md style="height:24px;"></div>
+      <div class="featured" style="height:24px;"></div>
 
       <div layout-gt-xs="row">
         <div flex="50" ng-repeat="event in events" class="listings-show">
